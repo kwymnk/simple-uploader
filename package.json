@@ -1,0 +1,19 @@
+{
+  "name": "simple-uploader",
+  "version": "1.0.0",
+  "description": "Simple uploader using Fastify",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "ts-node src/server.ts"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^8.2.0",
+    "@fastify/static": "^7.0.3",
+    "fastify": "^4.26.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4"
+  }
+}
