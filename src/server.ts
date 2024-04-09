@@ -19,14 +19,15 @@ server.get('/', async (_, reply) => {
   const files = (await fs.promises.readdir(path.join(__dirname, '../files'))).filter((name) => !name.startsWith('.'));
   const html = `
       <body>
-      <form action="/upload" enctype="multipart/form-data" method="post">
-        <input type="file" name="upload">
-        <input type="submit" value="Upload">
-      </form>
-      <h2>Uploaded files:</h2>
-      <ul>
-        ${files.map((file) => `<li><a href="/files/${file}">${file}</a></li>`)}
-      </ul>
+        <h2>Upload</h2>
+        <form action="/upload" enctype="multipart/form-data" method="post">
+          <input type="file" name="upload">
+          <input type="submit" value="Upload">
+        </form>
+        <h2>Files</h2>
+        <ul>
+          ${files.map((file) => `<li><a href="/files/${file}">${file}</a></li>`)}
+        </ul>
     </body>
   `;
   reply.type('text/html').send(html);
